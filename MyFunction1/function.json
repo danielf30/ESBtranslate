@@ -1,0 +1,20 @@
+{
+    "scriptFile": "__init__.py",
+    "bindings": [
+      {
+        "type": "serviceBusTrigger",
+        "direction": "in",
+        "name": "myQueueItem",
+        "queueName": "ciudadanosQueue",
+        "connection": "TuConnectionString"
+      },
+      {
+        "type": "blob",
+        "direction": "out",
+        "name": "outputBlob",
+        "path": "ciudadanosBlobContainer/{file_name}",
+        "connection": "TuConnectionStringBlobStorage"
+      }
+    ]
+  }
+  
