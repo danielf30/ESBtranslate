@@ -15,5 +15,5 @@ def main(myQueueItem: func.ServiceBusMessage, binder: func.Out[str], log: func.L
     file_name = f"{json_obj.get('idCiudadano', 'default')}.xml"
 
     # Usar binder para escribir en Blob Storage
-    output_blob: func.Out[str] = binder.bind(func.Out[str], blobPath=f"ciudadanosBlobContainer/{file_name}")
+    output_blob: func.Out[str] = binder.bind(func.Out[str], blobPath=f"output-service-rest/output/{file_name}")
     output_blob.set(xml_str)
