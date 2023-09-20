@@ -6,14 +6,14 @@
         "direction": "in",
         "name": "myQueueItem",
         "queueName": "ciudadanosQueue",
-        "connection": "service_bus_conn_str"
+        "connection": "SERVICE_BUS_CONNECTION_STRING"
       },
       {
         "type": "blob",
         "direction": "out",
         "name": "outputBlob",
         "path": "output-service-rest/output/{file_name}",
-        "connection": "blob_storage_conn_str"
+        "connection": "BLOB_STORAGE_CONNECTION_STRING"
       }
     ]
   }
