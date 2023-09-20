@@ -3,8 +3,8 @@
     "Values": {
       "AzureWebJobsStorage": "UseDevelopmentStorage=true",
       "FUNCTIONS_WORKER_RUNTIME": "python",
-      "TuConnectionString": "YOUR_SERVICE_BUS_CONNECTION_STRING",
-      "TuConnectionStringBlobStorage": "YOUR_BLOB_STORAGE_CONNECTION_STRING"
+      "SERVICE_BUS_CONNECTION_STRING": "Endpoint=sb://azure-enterprise-service-bus.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=fMt9svia6r4dbOqxIrLzfLLnbulwGtdcE+ASbOghVvQ=",
+      "BLOB_STORAGE_CONNECTION_STRING": "DefaultEndpointsProtocol=https;AccountName=sendmenssagestrigger;AccountKey=9jdd+tniN9/lGlg7jCACKWbL15AyxXNGbo1GRyaDIOhg8YfIaLPtAdvhfGApvLWkLmM8VqZMH3Aa+ASt2x/1Hw==;EndpointSuffix=core.windows.net"
     }
   }
   
