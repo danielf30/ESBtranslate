@@ -6,7 +6,7 @@ import dicttoxml
 blob_storage_conn_str = os.environ["BLOB_STORAGE_CONNECTION_STRING"]
 service_bus_conn_str = os.environ["SERVICE_BUS_CONNECTION_STRING"]
 
-def main(myQueueItem: func.ServiceBusMessage, outputBlob: func.Out[str], log: func.Logger):
+def main(myQueueItem: func.ServiceBusMessage, binder: func.Out[str], log: func.Logger):
     try:
         # Logging
         data = myQueueItem.get_body().decode('utf-8')
@@ -15,6 +15,9 @@ def main(myQueueItem: func.ServiceBusMessage, outputBlob: func.Out[str], log: fu
         json_obj = json.loads(data)
         xml_str = dicttoxml.dicttoxml(json_obj, custom_root="Root", ids=False).decode('utf-8')
         
-        outputBlob.set(xml_str)
+        file_name = f"{json_obj.get('idCiudadano', 'default')}.xml"
+        output_blob: func.Out[str] = binder.bind(func.Out[str], blobPath=f"output-service-rest/output/{file_name}")
+        output_blob.set(xml_str)
     except Exception as e:
         log.error(f"Error al procesar el mensaje: {str(e)}")
+

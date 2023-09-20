@@ -12,9 +12,9 @@
         "type": "blob",
         "direction": "out",
         "name": "outputBlob",
-        "path": "output-service-rest/output/{file_name}",
+        "path": "output-service-rest/output",
         "connection": "BLOB_STORAGE_CONNECTION_STRING"
-      }
+    }    
     ]
   }
   
