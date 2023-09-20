@@ -6,14 +6,14 @@
         "direction": "in",
         "name": "myQueueItem",
         "queueName": "ciudadanosQueue",
-        "connection": "TuConnectionString"
+        "connection": "service_bus_conn_str"
       },
       {
         "type": "blob",
         "direction": "out",
         "name": "outputBlob",
-        "path": "ciudadanosBlobContainer/{file_name}",
-        "connection": "TuConnectionStringBlobStorage"
+        "path": "output-service-rest/output/{file_name}",
+        "connection": "blob_storage_conn_str"
       }
     ]
   }

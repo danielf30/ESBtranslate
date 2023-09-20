@@ -1,6 +1,10 @@
+import os
 import azure.functions as func
 import json
 import dicttoxml
+
+blob_storage_conn_str = os.environ["BLOB_STORAGE_CONNECTION_STRING"]
+service_bus_conn_str = os.environ["SERVICE_BUS_CONNECTION_STRING"]
 
 def main(myQueueItem: func.ServiceBusMessage, binder: func.Out[str], log: func.Logger):
     # Logging
