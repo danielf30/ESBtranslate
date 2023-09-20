@@ -1,20 +1,19 @@
 {
-    "scriptFile": "__init__.py",
     "bindings": [
       {
         "type": "serviceBusTrigger",
         "direction": "in",
         "name": "myQueueItem",
-        "queueName": "ciudadanosQueue",
+        "queueName": "nombre-de-tu-cola",
         "connection": "SERVICE_BUS_CONNECTION_STRING"
       },
       {
         "type": "blob",
         "direction": "out",
         "name": "outputBlob",
-        "path": "output-service-rest/output",
+        "path": "output-service-rest/output/{rand-guid}.xml",
         "connection": "BLOB_STORAGE_CONNECTION_STRING"
-    }    
+      }
     ]
   }
   
